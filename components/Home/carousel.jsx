@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './home.css';
-import '../about/about.css';
+import '../About/about.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
