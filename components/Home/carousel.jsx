@@ -103,7 +103,7 @@ const Carousel = () => {
 
     useEffect(() => {
         const updateSlidesToShow = () => {
-            const screenWidth = window.innerWidth;
+            const screenWidth = typeof window !== 'undefined' && window.innerWidth;
 
             if (screenWidth >= 1300)
                 setSlidesToShow(4);
@@ -118,10 +118,12 @@ const Carousel = () => {
 
         };
         updateSlidesToShow();
-        window.addEventListener('resize', updateSlidesToShow);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', updateSlidesToShow);
 
-        return () => {
-            window.removeEventListener('resize', updateSlidesToShow);
+            return () => {
+                window.removeEventListener('resize', updateSlidesToShow);
+            }
         };
     }, []);
 
@@ -152,7 +154,7 @@ const Carousel = () => {
                             <Card sx={{
                                 maxWidth: 320,
                                 margin: 'auto',
-                                cursor:'pointer'
+                                cursor: 'pointer'
                             }}
                                 onClick={() => router.push(`http://localhost:3000/${course.page}`)}
                                 key={index}>

@@ -16,7 +16,7 @@ import '../../About/about.css'
 import '../academicCommunity.css';
 
 const Professors = () => {
-    const [height, setHeight] = useState(window.innerWidth < 400 ? 145 : 180);
+    const [height, setHeight] = useState(typeof window !== 'undefined' && window.innerWidth < 400 ? 145 : 180);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -26,16 +26,16 @@ const Professors = () => {
                 setHeight(window.innerWidth < 400 ? 145 : 180);
             }
         };
-    
+
         if (typeof window !== 'undefined') {
             window.addEventListener('resize', handleResize);
-    
+
             return () => {
                 window.removeEventListener('resize', handleResize);
             };
         }
     }, []);
-    
+
 
     return (
         <>
@@ -73,7 +73,7 @@ const Professors = () => {
                             <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
                                 <Card sx={{ maxWidth: 345 }} key={index}>
                                     <CardMedia
-                                        sx={{ height}}
+                                        sx={{ height }}
                                         image={`${index % 2 ? '/assets/academicCommunity/professors/professor-1.jpg' : '/assets/academicCommunity/professors/professor-2.png'}`}
                                         title="green iguana"
                                     />

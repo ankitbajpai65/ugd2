@@ -21,7 +21,7 @@ import '../academicCommunity.css';
 const Alumni = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-    const [height, setHeight] = useState(window.innerWidth < 400 ? 145 : 180);
+    const [height, setHeight] = useState(typeof window !== 'undefined' && window.innerWidth < 400 ? 145 : 180);
 
     useEffect(() => {
         const handleResize = () => {
