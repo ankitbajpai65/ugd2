@@ -47,7 +47,7 @@ const Notice = () => {
                                 <Button
                                     variant="contained"
                                     className='newsBtn'
-                                    onClick={() => window.open(news.link, '_blank')}
+                                    onClick={() => window !== 'undefined' && window.open(news.link, '_blank')}
                                 >
                                     Leer más</Button>
                             </Card>

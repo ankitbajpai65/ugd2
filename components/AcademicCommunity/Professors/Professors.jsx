@@ -22,14 +22,20 @@ const Professors = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setHeight(window.innerWidth < 400 ? 145 : 180);
+            if (typeof window !== 'undefined') {
+                setHeight(window.innerWidth < 400 ? 145 : 180);
+            }
         };
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+    
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', handleResize);
+    
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
     }, []);
+    
 
     return (
         <>
