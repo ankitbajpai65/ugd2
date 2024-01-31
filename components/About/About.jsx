@@ -1,12 +1,12 @@
 "use client"
-import FoundInstitutions from './FoundInstitutions';
+import FoundInstitutions from './foundInstitutions';
 import FoundingBackground from './FoundingBackground';
 import {
     Grid,
     Box,
     Typography
 } from '@mui/material';
-import './About.css'
+import './about.css'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 

@@ -3,13 +3,13 @@ import FirstSubSection from './FirstSubSection/FirstSubSection';
 import SecondSubSection from './SecondSubSection/SecondSubSection';
 import WelcomeSection from './WelcomeSection/WelcomeSection';
 import Events from './Events';
-import Carousel from './Carousel';
+import Carousel from './carousel';
 import Notice from '../Notice/Notice';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import './Home.css';
+import './home.css';
 import '../About/about.css';
 
 const Home = () => {
