@@ -148,7 +148,7 @@ const Carousel = () => {
             }}>
                 {
                     coursesData.map((course, index) =>
-                        <div>
+                        <div key={index}>
                             <Card sx={{
                                 maxWidth: 320,
                                 margin: 'auto',
